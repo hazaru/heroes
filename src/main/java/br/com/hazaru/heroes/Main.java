@@ -24,9 +24,8 @@ public class Main {
             System.out.println(it.next());
         }*/
 
-        HashMap<Integer, Contas> hash = new HashMap<>();
+        /*HashMap<Integer, Contas> hash = new HashMap<>();
 
-        for (int i = 0; i <= hash.size(); i++) {
             hash.put(1, new Contas(1, "Luz 1", 370.0, StatusPagamento.PAGO));
             hash.put(2, new Contas(2, "Luz 2", 280.0, StatusPagamento.PAGO));
             hash.put(3, new Contas(3, "Agua 1", 220.0, StatusPagamento.PAGO));
@@ -42,8 +41,7 @@ public class Main {
             hash.put(13, new Contas(13, "Empréstimo Santander", 1300.0, StatusPagamento.PAGO));
             hash.put(14, new Contas(13, "Cartoes", 2000.0, StatusPagamento.PAGO));
             hash.put(15, new Contas(14, "TV Claro", 90.0, StatusPagamento.PAGO));
-            hash.put(16, new Contas(15, "Multas", 750.0, StatusPagamento.PAGO));
-        }
+            hash.put(16, new Contas(15, "Multas", 750.0, StatusPagamento.PAGO));*/
         //BiConsumer<Integer, Contas> contas = (x, y) -> System.out.println(x.toString() + " " + y.getId() + " " + y.getDescricao() + " " + y.getDescricao() + " " + y.getValor());
 
         BiConsumer<Integer, Contas> contas = new MyBiConsumer();
@@ -51,9 +49,16 @@ public class Main {
         //hash.forEach(contas);
 
         //hash.entrySet().forEach(System.out::println);
-        DoubleStream doubleStream = hash.values().stream().mapToDouble(x -> x.getValor());
-        retornaValorTotal(hash);
-        System.out.println("O valor total é de : " + doubleStream.parallel().sum());
+        //DoubleStream doubleStream = hash.values().stream().mapToDouble(x -> x.getValor());
+        //retornaValorTotal(hash);
+        //System.out.println("O valor total é de : " + doubleStream.parallel().sum());
+
+        Heroes hero = new Heroes(1L, "Hazaru", HeroClass.DARK_ELF, HeroStyle.MAGIC, new ElfAttributes(10, 10, 10, 10, 10), HeroGender.MALE);
+
+        System.out.println(hero);
+
+
+
 
     }
 

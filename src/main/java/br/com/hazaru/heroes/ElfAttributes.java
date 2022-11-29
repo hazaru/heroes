@@ -1,25 +1,30 @@
 package br.com.hazaru.heroes;
 
-public abstract class ElfAttributes extends HeroAttributes {
+public class ElfAttributes extends HeroAttributes {
+
 
     private Integer stregth;
     private Integer defense;
     private Integer agility;
     private Integer velocity;
+    private Integer wisdow;
 
-    public ElfAttributes(Integer stregth, Integer defense, Integer agility, Integer velocity) {
+    public ElfAttributes(Integer stregth, Integer defense, Integer agility, Integer velocity, Integer wisdow) {
         this.stregth = stregth;
         this.defense = defense;
         this.agility = agility;
         this.velocity = velocity;
+        this.wisdow = wisdow;
     }
+
+    public ElfAttributes(){}
 
     public Integer getStregth() {
         return stregth;
     }
 
     public void setStregth(Integer stregth) {
-        this.stregth = 10;
+        this.stregth = stregth;
     }
 
     public Integer getDefense() {
@@ -27,11 +32,11 @@ public abstract class ElfAttributes extends HeroAttributes {
     }
 
     public void setDefense(Integer defense) {
-        this.defense = 7;
+        this.defense = defense;
     }
 
     public Integer getAgility() {
-        return 12;
+        return agility;
     }
 
     public void setAgility(Integer agility) {
@@ -43,7 +48,7 @@ public abstract class ElfAttributes extends HeroAttributes {
     }
 
     public void setVelocity(Integer velocity) {
-        this.velocity = 14;
+        this.velocity = velocity;
     }
 
     @Override
@@ -63,6 +68,21 @@ public abstract class ElfAttributes extends HeroAttributes {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "ElfAttributes{" +
+                "stregth=" + stregth +
+                ", defense=" + defense +
+                ", agility=" + agility +
+                ", velocity=" + velocity +
+                ", wisdow=" + wisdow +
+                '}';
     }
+
+    public Integer getWisdow() {
+        return wisdow;
+    }
+
+    public void setWisdow(Integer wisdow) {
+        this.wisdow = wisdow;
+    }
+
 }
