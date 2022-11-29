@@ -1,7 +1,6 @@
-package br.com.example;
+package br.com.hazaru.heroes;
 
 import java.util.Objects;
-import java.util.function.Supplier;
 
 public class Telefones{
 

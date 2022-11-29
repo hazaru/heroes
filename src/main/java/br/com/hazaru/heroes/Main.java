@@ -1,4 +1,4 @@
-package br.com.example;
+package br.com.hazaru.heroes;
 
 
 import java.util.*;
@@ -42,6 +42,7 @@ public class Main {
             hash.put(13, new Contas(13, "Empréstimo Santander", 1300.0, StatusPagamento.PAGO));
             hash.put(14, new Contas(13, "Cartoes", 2000.0, StatusPagamento.PAGO));
             hash.put(15, new Contas(14, "TV Claro", 90.0, StatusPagamento.PAGO));
+            hash.put(16, new Contas(15, "Multas", 750.0, StatusPagamento.PAGO));
         }
         //BiConsumer<Integer, Contas> contas = (x, y) -> System.out.println(x.toString() + " " + y.getId() + " " + y.getDescricao() + " " + y.getDescricao() + " " + y.getValor());
 

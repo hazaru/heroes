@@ -1,4 +1,4 @@
-package br.com.example;
+package br.com.hazaru.heroes;
 
 import java.util.function.BiConsumer;
 
