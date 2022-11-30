@@ -1,8 +1,9 @@
 plugins {
     id 'java'
+
 }
 
-group 'br.com.example'
+group 'br.com.hazaru.heroes'
 version '1.0-SNAPSHOT'
 
 repositories {
