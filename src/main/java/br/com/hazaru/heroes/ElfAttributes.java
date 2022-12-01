@@ -9,12 +9,23 @@ public class ElfAttributes extends HeroAttributes {
     private Integer velocity;
     private Integer wisdow;
 
+    private HeroBurst heroBurst = HeroBurst.HEARTH;
+
+    public HeroBurst getHeroBurst() {
+        return heroBurst;
+    }
+
+    public void setHeroBurst(HeroBurst heroBurst) {
+        this.heroBurst = heroBurst;
+    }
+
     public ElfAttributes(Integer stregth, Integer defense, Integer agility, Integer velocity, Integer wisdow) {
         this.stregth = stregth;
         this.defense = defense;
         this.agility = agility;
         this.velocity = velocity;
         this.wisdow = wisdow;
+        this.heroBurst = HeroBurst.DARKNESS;
     }
 
     public ElfAttributes(){}

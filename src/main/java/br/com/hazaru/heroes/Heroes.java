@@ -9,6 +9,7 @@ public class Heroes {
     private HeroAttributes heroAttributes;
     private HeroGender heroGender;
 
+    private HeroBurst heroBurst = HeroBurst.HEARTH;
 
     public Heroes(Long heroId, String heroName, HeroClass heroClass, HeroStyle heroStyle, HeroAttributes heroAttributes, HeroGender heroGender) {
         this.heroId = heroId;
@@ -68,6 +69,8 @@ public class Heroes {
     public void setHeroGender(HeroGender heroGender) {
         this.heroGender = heroGender;
     }
+
+
 
     @Override
     public int hashCode() {
