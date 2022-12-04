@@ -1,11 +1,20 @@
 package br.com.hazaru.heroes;
 
+import java.io.Console;
+
 
 public class ChooseHero {
 
-    public void chooseHeroName() {
+    Console console = System.console();
+    public String chooseHeroName() {
+        String nome = console.readLine();
         System.out.println("Choose your hero name");
+        console.readLine();
+
+        return nome;
     }
+
+
 
     public void chooseHero() {
         System.out.println("Choose your hero class");

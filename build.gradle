@@ -10,10 +10,30 @@ repositories {
     mavenCentral()
 }
 
+//mainClassName('br.com.hazaru.heroes.Main')
+
 dependencies {
+
+    implementation project('usaecase')
+    implementation project('database')
+    implementation project('web-adapter')
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    //implementation group: 'org.springframework', name: 'spring-context', version: '6.0.0'
+    //implementation "org.springframework.integration:spring-integration-event:6.0.0"
 
+
+}
+
+subprojects {
+
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+//    implementation group: 'org.springframework', name: 'spring-context', version: '6.0.0'
+//    implementation "org.springframework.integration:spring-integration-event:6.0.0"
 }
 
 test {

@@ -1,5 +1,7 @@
 package br.com.hazaru.heroes;
 
+import java.awt.desktop.AppEvent;
+
 public class Heroes {
 
     private Long heroId;
@@ -12,6 +14,8 @@ public class Heroes {
     private HeroBurst heroBurst = HeroBurst.HEARTH;
 
     public Heroes(Long heroId, String heroName, HeroClass heroClass, HeroStyle heroStyle, HeroAttributes heroAttributes, HeroGender heroGender) {
+        super();
+
         this.heroId = heroId;
         this.heroName = heroName;
         this.heroClass = heroClass;
@@ -20,7 +24,7 @@ public class Heroes {
         this.heroGender = heroGender;
     }
 
-    public Heroes(){}
+
 
     public Long getHeroId() {
         return heroId;
