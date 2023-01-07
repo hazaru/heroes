@@ -1,28 +1,46 @@
 package br.com.hazaru.heroes;
 
+import br.com.hazaru.heroes.enums.HeroClass;
+
 import java.io.Console;
+import java.util.EventListener;
+import java.util.function.Consumer;
 
 
-public class ChooseHero {
-
+public class ChooseHero implements EventListener {
+    private String heroname;
     Console console = System.console();
-    public String chooseHeroName() {
-        String nome = console.readLine();
+
+    String chooseHeroName() {
+        this.heroname = console.readLine();
         System.out.println("Choose your hero name");
         console.readLine();
 
-        return nome;
+        return heroname;
     }
 
+    public void getHeroName(String heroname) {
+        this.heroname = heroname;
+    }
 
-
-    public void chooseHero() {
+    public HeroClass chooseHero(Consumer<Integer> consumer) {
         System.out.println("Choose your hero class");
+
+        HeroClass listHeroClass = HeroClass.valueOf(HeroClass.values().toString());
+
+        System.out.println(listHeroClass.getHeroClass());
+
         System.out.println("1 - Human");
         System.out.println("2 - Elf");
         System.out.println("3 - Orc");
         System.out.println("4 - DarkElf");
         System.out.println("5 - Dwarf");
+        Integer heroClassChoosed = 0;
+
+        console.readLine();
+        consumer.accept(heroClassChoosed);
+
+        return listHeroClass;
     }
 
     public void chooseHeroClass() {

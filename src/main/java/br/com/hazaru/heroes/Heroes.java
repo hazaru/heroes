@@ -1,6 +1,9 @@
 package br.com.hazaru.heroes;
 
-import java.awt.desktop.AppEvent;
+import br.com.hazaru.heroes.enums.HeroBurstEnum;
+import br.com.hazaru.heroes.enums.HeroClass;
+import br.com.hazaru.heroes.enums.HeroGender;
+import br.com.hazaru.heroes.enums.HeroStyle;
 
 public class Heroes {
 
@@ -11,7 +14,7 @@ public class Heroes {
     private HeroAttributes heroAttributes;
     private HeroGender heroGender;
 
-    private HeroBurst heroBurst = HeroBurst.HEARTH;
+    private HeroBurstEnum heroBurstEnum = HeroBurstEnum.HEARTH;
 
     public Heroes(Long heroId, String heroName, HeroClass heroClass, HeroStyle heroStyle, HeroAttributes heroAttributes, HeroGender heroGender) {
         super();

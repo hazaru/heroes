@@ -1,4 +1,4 @@
-package br.com.hazaru.heroes;
+package br.com.hazaru.heroes.enums;
 
 public enum HeroStyle {
 

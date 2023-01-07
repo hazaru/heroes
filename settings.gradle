@@ -1,5 +1,4 @@
 rootProject.name = 'hazaru-heroes'
 include 'web-adapter'
-include 'database'
-include 'usaecase'
+include 'kafka-consumer-adapter'
 

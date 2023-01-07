@@ -1,5 +1,7 @@
 package br.com.hazaru.heroes;
 
+import br.com.hazaru.heroes.enums.HeroBurstEnum;
+
 public class ElfAttributes extends HeroAttributes {
 
 
@@ -9,14 +11,14 @@ public class ElfAttributes extends HeroAttributes {
     private Integer velocity;
     private Integer wisdow;
 
-    private HeroBurst heroBurst = HeroBurst.HEARTH;
+    private HeroBurstEnum heroBurstEnum = HeroBurstEnum.HEARTH;
 
-    public HeroBurst getHeroBurst() {
-        return heroBurst;
+    public HeroBurstEnum getHeroBurst() {
+        return heroBurstEnum;
     }
 
-    public void setHeroBurst(HeroBurst heroBurst) {
-        this.heroBurst = heroBurst;
+    public void setHeroBurst(HeroBurstEnum heroBurstEnum) {
+        this.heroBurstEnum = heroBurstEnum;
     }
 
     public ElfAttributes(Integer stregth, Integer defense, Integer agility, Integer velocity, Integer wisdow) {
@@ -25,7 +27,7 @@ public class ElfAttributes extends HeroAttributes {
         this.agility = agility;
         this.velocity = velocity;
         this.wisdow = wisdow;
-        this.heroBurst = HeroBurst.DARKNESS;
+        this.heroBurstEnum = HeroBurstEnum.DARKNESS;
     }
 
     public ElfAttributes(){}
