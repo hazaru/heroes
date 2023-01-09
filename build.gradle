@@ -3,6 +3,7 @@ plugins {
     id "org.springframework.boot" version "2.7.5"
     id "io.spring.dependency-management" version "1.0.11.RELEASE"
     id "maven-publish"
+    id "application"
 }
 
 group 'br.com.hazaru.heroes'
@@ -16,8 +17,12 @@ repositories {
 }
 
 group = 'br.com.hazaru.heroes'
-//mainClassName = 'br.com.hazaru.heroes.AppBootJava'
+mainClassName = 'br.com.hazaru.heroes.AppBoot'
 sourceCompatibility = '11'
+
+sourceSets {
+    main.java.srcDirs = ['src/main/java']
+}
 
 dependencies {
 
@@ -60,11 +65,17 @@ subprojects {
     }
 }
 
-dependencyManagement {
+/*dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:2020.0.3"
     }
-}
+}*/
+
+/*compileJava{
+    options {
+        jvmTarget = "11"
+    }
+}*/
 
 test {
     useJUnitPlatform()

@@ -5,6 +5,8 @@ import br.com.hazaru.heroes.enums.HeroGender;
 import br.com.hazaru.heroes.enums.HeroStyle;
 
 import java.io.*;
+import java.util.Arrays;
+import java.util.logging.Logger;
 
 public class AppBoot {
     public static void main(String[] args) {
@@ -13,12 +15,15 @@ public class AppBoot {
 
         Console c = System.console();
 
-        String heroClass = chooseHero.chooseHeroName();
+        String choosedHeroName = chooseHero.alreadyChoosedHeroNameByUser();
 
-        String heroType = c.readLine("Hero type:");
+        Long showCountOfExistingClasses = Arrays.stream(HeroClass.values()).count();
 
+        Logger.getLogger("Select between " + showCountOfExistingClasses + " classes");
 
-        Heroes hero = new Heroes(1L, "Hazaru", HeroClass.valueOf(HeroClass.values().toString()), HeroStyle.MAGIC, new ElfAttributes(10, 10, 10, 10, 10), HeroGender.MALE);
+        HeroClass heroClass = chooseHero.chooseOptionHeroClass();
+
+        Heroes hero = new Heroes(1L, choosedHeroName, heroClass, HeroStyle.MAGIC, new InitialElfAttributes(10, 10, 10, 10, 10), HeroGender.valueOf(HeroGender.MALE.name()));
 
         System.out.println(hero);
 

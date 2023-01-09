@@ -2,7 +2,7 @@ package br.com.hazaru.heroes;
 
 import br.com.hazaru.heroes.enums.HeroBurstEnum;
 
-public class ElfAttributes extends HeroAttributes {
+public class InitialElfAttributes extends HeroAttributes {
 
 
     private Integer stregth;
@@ -21,7 +21,7 @@ public class ElfAttributes extends HeroAttributes {
         this.heroBurstEnum = heroBurstEnum;
     }
 
-    public ElfAttributes(Integer stregth, Integer defense, Integer agility, Integer velocity, Integer wisdow) {
+    public InitialElfAttributes(Integer stregth, Integer defense, Integer agility, Integer velocity, Integer wisdow) {
         this.stregth = stregth;
         this.defense = defense;
         this.agility = agility;
@@ -30,7 +30,8 @@ public class ElfAttributes extends HeroAttributes {
         this.heroBurstEnum = HeroBurstEnum.DARKNESS;
     }
 
-    public ElfAttributes(){}
+    public InitialElfAttributes() {
+    }
 
     public Integer getStregth() {
         return stregth;
@@ -82,11 +83,11 @@ public class ElfAttributes extends HeroAttributes {
     @Override
     public String toString() {
         return "ElfAttributes{" +
-                "stregth=" + stregth +
-                ", defense=" + defense +
-                ", agility=" + agility +
-                ", velocity=" + velocity +
-                ", wisdow=" + wisdow +
+                "stregth=" + 10 +
+                ", defense=" + 10 +
+                ", agility=" + 10 +
+                ", velocity=" + 10 +
+                ", wisdow=" + 10 +
                 '}';
     }
 

@@ -2,48 +2,87 @@ package br.com.hazaru.heroes;
 
 import br.com.hazaru.heroes.enums.HeroClass;
 
-import java.io.Console;
 import java.util.EventListener;
-import java.util.function.Consumer;
+import java.util.Scanner;
+import java.util.logging.Logger;
 
 
 public class ChooseHero implements EventListener {
-    private String heroname;
-    Console console = System.console();
+    private static String heroName;
+    private static int HERO_LIST_NUMBERED = 1;
 
-    String chooseHeroName() {
-        this.heroname = console.readLine();
+    private Scanner scanner;
+
+    public ChooseHero(Scanner scanner) {
+        this.scanner = scanner;
+
+    }
+
+    public ChooseHero() {
+        this.scanner = scanner;
+
+    }
+
+
+    private static String chooseHeroName() {
+
+        Scanner scannerToChooseName = new Scanner(System.in);
+
         System.out.println("Choose your hero name");
-        console.readLine();
+        heroName = scannerToChooseName.nextLine();
 
-        return heroname;
+        return heroName;
+    }
+
+    public String alreadyChoosedHeroNameByUser() {
+        return chooseHeroName();
     }
 
     public void getHeroName(String heroname) {
-        this.heroname = heroname;
+        this.heroName = heroname;
     }
 
-    public HeroClass chooseHero(Consumer<Integer> consumer) {
-        System.out.println("Choose your hero class");
+    public HeroClass chooseOptionHeroClass() {
 
-        HeroClass listHeroClass = HeroClass.valueOf(HeroClass.values().toString());
+        int consumer;
+        System.out.println("Choose your hero class:");
 
-        System.out.println(listHeroClass.getHeroClass());
+        //List all heroes from actual list
+        listHeroClassPerKeyAndValue();
 
-        System.out.println("1 - Human");
-        System.out.println("2 - Elf");
-        System.out.println("3 - Orc");
-        System.out.println("4 - DarkElf");
-        System.out.println("5 - Dwarf");
-        Integer heroClassChoosed = 0;
+        Scanner scanerHeroClass = new Scanner(System.in);
 
-        console.readLine();
-        consumer.accept(heroClassChoosed);
+        consumer = scanerHeroClass.nextInt();
 
-        return listHeroClass;
+        isChoosedValidHero(consumer);
+
+        return heroChoosed(consumer);
+
     }
 
-    public void chooseHeroClass() {
+    private HeroClass heroChoosed(int consumer) {
+
+        HeroClass heroClass = HeroClass.values()[consumer];
+
+        return heroClass;
+    }
+
+
+    private static void listHeroClassPerKeyAndValue() {
+        for (HeroClass hero : HeroClass.values()
+        ) {
+            System.out.println(HERO_LIST_NUMBERED + " - " + hero.name());
+            HERO_LIST_NUMBERED++;
+        }
+    }
+
+    private Boolean isChoosedValidHero(int heroListNumber) {
+        if (heroListNumber <= 0 || heroListNumber > 5)
+            System.out.println("Choose a Hero Class between 1 and 5");
+        return false;
+    }
+
+    public void chooseOptionHeroStyleClass() {
         System.out.println("Choose your hero Class");
         System.out.println("1 - Fighter");
         System.out.println("2 - Mage");
